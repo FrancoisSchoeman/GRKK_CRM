@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+    
+    {% block title %}Add New Customer{% endblock %}
+
+        
+        {% block content %}
+        
+        
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>Add New Customer</h1>
+
+                        <form action="{% url 'mailer:add-customer' %}" method="post">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                {% for field in form.visible_fields %}
+                                    <h5 class="label-text">{{ field.label }}</h5>
+                                    {{ field }}
+                                    {{ field.errors }}
+                                    <small class="form-text text-muted">{{ field.help_text }}</small>
+                                {% endfor %}
+
+                                    {% for hidden in form.hidden_fields %}
+                                    {{ hidden }}
+                                    {% endfor %}
+                            </div>
+
+                            <button class="btn btn-primary">Add New Customer</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+                
+        
+        
+        {% endblock %}

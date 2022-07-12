@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+    
+{% block title %}View All Customers{% endblock %}
+
+        
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-control">
+                <p>
+                    Are you sure that you want to delete the following customer: <strong>{{ customer.name }}?</strong>
+                </p>
+                <div class="d-grid gap-2 d-md-block">
+                    <a href="{% url 'mailer:all-customers' %}" class="btn btn-primary">No</a>
+                <button type="submit" class="btn btn-outline-danger">Yes</button>
+                </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

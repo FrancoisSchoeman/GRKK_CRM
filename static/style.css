@@ -1,0 +1,35 @@
+
+.table-responsive table{
+    margin: auto;
+}
+
+.navbar-class{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+}
+
+div.container{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+label{
+    margin-top: 10px;
+}
+
+.scroll-to-top{
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+}
+
+.label-text{
+    margin-top: 20px;
+}
+
+.divider{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+    
+{% block title %}Email Multiple Customers{% endblock %}
+
+        
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Send Batch Emails To Customers By Type</h1>
+                <form method="post">
+                    {% csrf_token %}
+                    <!-- form.media is for tinymce editor -->
+                    {{ form.media }}
+                    {{ form }}
+                    <button type="submit" class="btn btn-primary">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+        
+{% endblock %}
